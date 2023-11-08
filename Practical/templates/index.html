@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practical</title>
+    <style>
+        /* Set background color for the entire page */
+        html {
+            background-color: #CCFFFF;
+        }
+
+        body {
+            text-align: center;
+
+        }
+
+        form {
+            display: inline-block;
+            width: 250px;
+            text-align: center;
+            background-color: #2554C7;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: "Verdana";
+        }
+
+        input[type="text"] {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Button Styles */
+        button {
+            display: block;
+            margin: 0 auto;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Prediction Output Box Styles */
+        .prediction-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            max-width: 300px; /* Adjust the maximum width as needed */
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Predict Diabetes</h1>
+    <form method="POST" action="/predict">
+
+        <label for="age">Age:</label><br>
+        <input type="number" name='age' id='age'><br><br>
+
+        <label for="hypertension">Hypertension <br>(0: No, 1: Yes):</label><br>
+        <input type="number" name="hypertension" id="hypertension"><br><br>
+
+        <label for="heart_disease">Heart Disease <br>(0: No, 1: Yes):</label><br>
+        <input type="number" name="heart_disease" id="heart_disease"><br><br>
+
+        <label for="bmi">BMI</label><br>
+        <input type="number" name="bmi" id="bmi"><br><br>
+
+        <label for='HbA1c'>HbA1C</label><br>
+        <input type="number" name='HbA1c' id='HbA1c'><br><br>
+
+        <label for="blood_glucose_level">Blood Glucose Level</label><br>
+        <input type="number" name="blood_glucose_level" id="blood_glucose_level"><br><br>
+
+
+        <input type="submit" value="Predict">
+
+        <div class="prediction-box">
+        <h4 style="color: Red;">{{ prediction_output }}</h4>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
